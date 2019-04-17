@@ -1,0 +1,6 @@
+<!--pages/map/map.wxml-->
+<view class='dt'>
+  <map circles showLocation scale='16' latitude="{{latitude}}" longitude="{{longitude}}" markers='{{markers}}'>
+  
+  </map>
+</view>

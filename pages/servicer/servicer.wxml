@@ -1,0 +1,37 @@
+<!--pages/servicer/servicer.wxml-->
+<view class='box'>
+  <view class='area' wx:for='{{sj}}' wx:key='idx'>
+    {{idx}}
+    <view class='area_left left'>
+      <icon class="cart-pro-select" color="#D84A46" type="success" wx:if="{{item.selected}}"></icon>
+      <icon class="cart-pro-select" color="#D2D2D2" type="circle" wx:else></icon>
+    </view>
+    <navigator class='image left'>
+      <image mode='aspectFill' src='{{item.imgUrl}}' class='photo'></image>
+    </navigator>
+    <view class='describe left'>
+      <text class='head_txt'>{{item.head}}</text>
+      <text class='tit_txt'>{{item.title}}</text>
+      <view class='money'>
+        <text class='left'>{{item.goods_price?'￥'+item.goods_price:'免费'}}</text>
+        <view class='left select'>
+          <view class='left'>-</view>
+          <input class='left'></input>
+          <view class='left'>+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='allSelect'>
+    <view class='left'>
+      <icon bindtap="selectAll" class="total-select left" color="#D84A46" type="success" wx:if="{{selectAllStatus}}"></icon>
+      <icon bindtap="selectAll" class="total-select left" color="#D2D2D2" type="circle" wx:else></icon>
+      <text class='left allSelect-btn'>全选</text>
+      <view class='left all'>
+        合计:
+        <span>元</span>
+      </view>
+    </view>
+    <view class='right place'>去下单（）</view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/my/my.wxml-->
+<view class='my'>
+  <view class='top'>
+    <image src='{{userUrl}}' class='head_img'></image>
+    <text class='name'>{{userName}}<image src='../../image/bandin.png' class='icon right'></image></text>
+    <text class='vip'>万能会员</text>
+  </view>
+  <view class='my_list' wx:for='{{sj}}' wx:key='i' catchtap='{{item.href}}'>
+      <image src='{{item.icon}}' class='icon left icon1'></image>
+      <text class='text left'>{{item.text}}</text>
+  </view>
+  <view class='worker my_list'>
+    <image src='../../image/gg2.png' class='icon left icon1'></image>
+    <text class='text left'>申请维修工人</text>
+  </view>
+
+</view>

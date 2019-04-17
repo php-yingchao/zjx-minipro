@@ -1,0 +1,57 @@
+<view class='box'>
+  <view class='fxied'>
+    <!-- map -->
+    <view class="section left">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}},{{region[2]}}
+        </view>
+      </picker>
+    </view>
+    <!-- search -->
+    <view class='href right' bindtap='search'>
+      <icon type='search left' size='16'></icon>
+      <input placeholder='空调维修，油烟机清洗' class='search right' type='text' disabled='disabled'></input>
+    </view>
+  </view>
+  <!-- end -->
+  <!-- nav -->
+  <view class='nav'>
+    <view wx:for='{{iconData}}' wx:key="idx" class=' warp'>
+      <view class='img-mo'>
+        <image src='{{item.banner}}'></image>
+      </view>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <!-- nav end -->
+  <!-- banner start -->
+  <view class='banner'>
+    <swiper current='{{dataid}}' autoplay="true" interval="3000" duration="700" bindchange='change' class='banner'>
+      <swiper-item wx:for="{{bannerData}}" wx:key='i'>
+        <view>
+          <image src='{{item.image}}'></image>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- banner end -->
+  <!-- rim start -->
+  <view class='rim'>
+      <image src='/image/bg-2.png' style='position:relative;top:0;'></image>
+      <button catchtap='map'><image src='/image/dwei.png' class='left'></image>周边就位师傅</button>
+  </view>
+  <!-- rim end -->
+  <view class='scroll-area'>
+      <scroll-view scroll-y='true' bindscrolltolower="bindDownLoad" bindscroll="scroll" style='heigth:{{scrollH}}px'> 
+          <view wx:for='{{listData}}' wx:key='index' class='box-item'>
+            <image src='{{item.img}}' class='left item-img'></image>
+            <view class='left describe'>
+              <text class='name'>{{item.name}}</text>
+              <text class='desc'>{{item.desc}}</text>
+              <text class='money'><text class='symbol'>￥</text>{{item.mini_price}}</text>
+            </view>
+          </view>
+      </scroll-view>
+  </view>
+</view>

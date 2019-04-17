@@ -1,0 +1,29 @@
+<!--pages/classify/classify.wxml-->
+<view class='classify'>
+  <!-- top start -->
+  <view class='top'>
+    <scroll-view class='scroll-view-x' scroll-x style='width:100%; white-space: nowrap; display: flex'>
+      <view wx:for='{{sj}}' wx:key='idx' class='text'>
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <!-- end -->
+  <view class='bottom'>
+    <scroll-view scrollY class='left list' style='height:600px;width:20%;'>
+      <view class='list_text' wx:for='{{list}}' wx:key='i'>
+        {{item.name}}
+      </view>
+    </scroll-view>
+    <scroll-view class='right goods' scrollY style='height:600px;width:80%;'>
+      <view wx:for='{{goods}}' wx:key='t' class='goods_txte'>
+        <image src='{{item.img}}' class='left goods_img'></image>
+        <view class='left goods_area'>
+          <text class='goods_head'>{{item.name}}</text>
+          <text class='goods_desc'>{{item.desc}}</text>
+          <text class='goods_money'>￥{{item.price}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
