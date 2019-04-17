@@ -110,5 +110,14 @@ Page({
         console.log('转发失败' + JSON.stringify(err))
       }
     }
+  },
+  hrefXq:function(){
+    var i=this.data.goods
+    wx.navigateTo({
+      url: '/pages/conmon/particulars/particulars?goodId=',
+    })
+  },
+  test:function(e){
+    console.log(e)
   }
 })

@@ -4,7 +4,7 @@
   <view class='top'>
     <scroll-view class='scroll-view-x' scroll-x style='width:100%; white-space: nowrap; display: flex'>
       <view wx:for='{{sj}}' wx:key='idx' class='text'>
-        {{item.name}}
+        {{item.name}}{{idx}}
       </view>
     </scroll-view>
   </view>
@@ -12,14 +12,15 @@
   <view class='bottom'>
     <scroll-view scrollY class='left list' style='height:600px;width:20%;'>
       <view class='list_text' wx:for='{{list}}' wx:key='i'>
-        {{item.name}}
+        {{item.name}}{{i}}
       </view>
     </scroll-view>
     <scroll-view class='right goods' scrollY style='height:600px;width:80%;'>
-      <view wx:for='{{goods}}' wx:key='t' class='goods_txte'>
+      <view wx:for='{{goods}}' wx:key='id' class='goods_txte' bindtap='test(goods.id)'>
+      
         <image src='{{item.img}}' class='left goods_img'></image>
         <view class='left goods_area'>
-          <text class='goods_head'>{{item.name}}</text>
+          <text class='goods_head'>{{item.name}} ---{{id}}</text>
           <text class='goods_desc'>{{item.desc}}</text>
           <text class='goods_money'>￥{{item.price}}</text>
         </view>

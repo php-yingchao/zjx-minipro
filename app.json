@@ -11,7 +11,8 @@
     "pages/my/area/order/order",
     "pages/my/area/maintain/maintain",
     "pages/my/area/discounts/discounts",
-    "pages/conmon/pop-up/pop-up"
+    "pages/conmon/pop-up/pop-up",
+    "pages/conmon/particulars/particulars"
   ],
   "window": {
     "backgroundTextStyle": "light",
